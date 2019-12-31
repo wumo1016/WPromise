@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./WPromise.js"></script>
+  <script>
+    
+    /* new WPromise((r, j)=>{
+      setTimeout(()=>{
+        r()
+        // j()
+      },1000)
+    }).then(()=>{
+      console.log('then1');
+      return new WPromise((r,j)=>{
+        j()
+      })
+    }).then(()=>{
+      console.log('then2');
+    }).catch(()=>{
+      console.log('catch1');
+    }) */
+    
+    WPromise.race([Promise.resolve(2),Promise.reject(1)]).then((res)=>{
+      console.log(res)
+    }).catch(()=>{
+      console.log(2)
+    })
+    
+
+   
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>
